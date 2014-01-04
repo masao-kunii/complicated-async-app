@@ -21,7 +21,8 @@ public class RestClientResource implements IRestClientResource{
 		IJmsRestResource client = ProxyFactory.create(IJmsRestResource.class, via);
 		BaseClientResponse response = (BaseClientResponse)client.send(queueName, String.format("%s to %s", message, via));
 
-		return Response.ok().build();
+		log.fine("sent");
+		return Response.ok().entity("done.").build();
 	}
 
 
