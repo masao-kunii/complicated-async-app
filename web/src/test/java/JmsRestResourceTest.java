@@ -41,12 +41,11 @@ public class JmsRestResourceTest {
   
   @Test
   @RunAsClient
-  @SuppressWarnings("rawtypes")
   public void should_return_ok(@ArquillianResource URL url1) throws IOException {
 	  IJmsRestResource client = ProxyFactory.create(IJmsRestResource.class, url1
         .toString());
-    BaseClientResponse response = (BaseClientResponse)client.send("testQueue", "testMessage");
-    assertEquals(200, response.getStatus());
+    String response = client.send("testQueue", "testMessage");
+    assertEquals("done.", response);
   }
 
 }

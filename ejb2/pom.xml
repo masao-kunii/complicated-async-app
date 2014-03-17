@@ -39,8 +39,20 @@
 
     <dependencies>
 		<dependency>
+			<groupId>complicated.async.app</groupId>
+			<artifactId>complicated-async-app-ejb</artifactId>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.jboss.spec.javax.jms</groupId>
 			<artifactId>jboss-jms-api_1.1_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.ejb3</groupId>
+			<artifactId>jboss-ejb3-ext-api</artifactId>
+			<version>${version.jboss.ejb3.ext.api}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -114,6 +126,43 @@
                 </configuration>
             </plugin>
         </plugins>
+		<resources>
+<!-- 
+			<resource>
+				<targetPath>${basedir}/target/classes</targetPath>
+				<directory>../ejb/target/classes</directory>
+				<includes>
+					<include>**/Log*.class</include>
+					<include>**/Resources.class</include>
+					<include>**/*.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/pom.xml</exclude>
+				</excludes>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<targetPath>${basedir}/target/classes</targetPath>
+				<directory>../ear/src/main/application</directory>
+				<includes>
+					<include>**/*-ds.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/pom.xml</exclude>
+				</excludes>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<targetPath>${basedir}/target/classes</targetPath>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+-->
+		</resources>
+
     </build>
 
     <profiles>

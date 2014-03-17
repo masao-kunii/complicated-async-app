@@ -1,9 +1,0 @@
-<jboss-deployment-structure>
-	<ear-subdeployments-isolated>false</ear-subdeployments-isolated>
-	<sub-deployment name="complicated-async-app-web.war">
-		<dependencies>
-			<module name="deployment.complicated-async-app-ear.ear.complicated-async-app-ejb.jar" />
-		</dependencies>
-	</sub-deployment>
-</jboss-deployment-structure>
-

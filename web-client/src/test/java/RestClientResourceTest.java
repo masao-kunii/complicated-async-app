@@ -11,7 +11,6 @@ import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
 import org.jboss.resteasy.client.ProxyFactory;
-import org.jboss.resteasy.client.core.BaseClientResponse;
 import org.jboss.resteasy.plugins.providers.RegisterBuiltin;
 import org.jboss.resteasy.spi.ResteasyProviderFactory;
 import org.jboss.shrinkwrap.api.Archive;
@@ -41,12 +40,11 @@ public class RestClientResourceTest {
 
   @Test
   @RunAsClient
-  @SuppressWarnings("rawtypes")
   public void should_return_ok(@ArquillianResource URL url1) throws IOException {
 	  IRestClientResource client = ProxyFactory.create(IRestClientResource.class, url1
         .toString());
-    BaseClientResponse response = (BaseClientResponse)client.send("localhost:8080", "testQueue", "testMessage");
-    assertEquals(200, response.getStatus());
+    String response = client.send("localhost:8080", "testQueue", "testMessage");
+    assertEquals("done.", response);
   }
 
 }

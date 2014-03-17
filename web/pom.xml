@@ -117,6 +117,7 @@
 			<groupId>complicated.async.app</groupId>
 			<artifactId>complicated-async-app-ejb</artifactId>
 			<type>ejb</type>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

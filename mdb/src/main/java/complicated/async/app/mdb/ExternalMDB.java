@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.jms.Message;
 
-public class TestMDB extends AbstractMDB {
+public class ExternalMDB extends AbstractMDB {
 	@Inject
 	private Logger log;
 

@@ -34,20 +34,19 @@
 	</licenses>
 
 	<dependencies>
-<!--
 		<dependency>
 			<groupId>complicated.async.app</groupId>
 			<artifactId>complicated-async-app-ejb</artifactId>
 			<type>ejb</type>
-			<scope>compile</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>complicated.async.app</groupId>
 			<artifactId>complicated-async-app-ejb2</artifactId>
 			<type>ejb</type>
-			<scope>compile</scope>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
- -->
  		<dependency>
 			<groupId>org.jboss.spec.javax.jms</groupId>
 			<artifactId>jboss-jms-api_1.1_spec</artifactId>
@@ -118,17 +117,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>complicated.async.app</groupId>
-			<artifactId>complicated-async-app-ejb</artifactId>
-			<type>ejb</type>
-		</dependency>
-		<dependency>
-			<groupId>complicated.async.app</groupId>
-			<artifactId>complicated-async-app-ejb2</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<type>ejb</type>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -144,6 +132,42 @@
 			</plugin>
 
 		</plugins>
+
+		<resources>
+<!-- 
+			<resource>
+				<targetPath>${basedir}/target/classes</targetPath>
+				<directory>../ejb2/target/classes</directory>
+				<includes>
+					<include>**/Log*.class</include>
+					<include>**/*.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/pom.xml</exclude>
+				</excludes>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<targetPath>${basedir}/target/classes</targetPath>
+				<directory>../ear/src/main/application</directory>
+				<includes>
+					<include>**/*-ds.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/pom.xml</exclude>
+				</excludes>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<targetPath>${basedir}/target/classes</targetPath>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+-->
+		</resources>
 	</build>
 
 	<profiles>
@@ -181,32 +205,6 @@
 						</configuration>
 					</plugin>
 				</plugins>
-		<resources>
-			<resource>
-				<targetPath>${basedir}/target/classes</targetPath>
-				<directory>../ejb/target/classes</directory>
-				<includes>
-					<include>**/Log*.class</include>
-					<include>**/Resources.class</include>
-					<include>**/*.xml</include>
-				</includes>
-				<excludes>
-					<exclude>**/pom.xml</exclude>
-				</excludes>
-				<filtering>false</filtering>
-			</resource>
-			<resource>
-				<targetPath>${basedir}/target/classes</targetPath>
-				<directory>../ear/src/main/application</directory>
-				<includes>
-					<include>**/*-ds.xml</include>
-				</includes>
-				<excludes>
-					<exclude>**/pom.xml</exclude>
-				</excludes>
-				<filtering>false</filtering>
-			</resource>
-		</resources>
 			</build>
 		</profile>
 
